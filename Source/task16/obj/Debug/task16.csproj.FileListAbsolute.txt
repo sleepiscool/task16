@@ -1,0 +1,12 @@
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\bin\Debug\task16.exe.config
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\bin\Debug\task16.exe
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\bin\Debug\task16.pdb
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\bin\Debug\EntityFramework.dll
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\bin\Debug\System.Data.dll
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\bin\Debug\EntityFramework.xml
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.csprojResolveAssemblyReference.cache
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.Form1.resources
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.Properties.Resources.resources
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.csproj.GenerateResource.Cache
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.exe
+c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.pdb
