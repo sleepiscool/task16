@@ -10,3 +10,10 @@ c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\
 c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.csproj.GenerateResource.Cache
 c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.exe
 c:\users\den1sqaa\documents\visual studio 2013\Projects\task16\task16\obj\Debug\task16.pdb
+D:\Github\task16\Source\task16\bin\Debug\task16.exe.config
+D:\Github\task16\Source\task16\obj\Debug\task16.exe
+D:\Github\task16\Source\task16\obj\Debug\task16.pdb
+D:\Github\task16\Source\task16\obj\Debug\task16.csprojResolveAssemblyReference.cache
+D:\Github\task16\Source\task16\obj\Debug\task16.Form1.resources
+D:\Github\task16\Source\task16\obj\Debug\task16.Properties.Resources.resources
+D:\Github\task16\Source\task16\obj\Debug\task16.csproj.GenerateResource.Cache

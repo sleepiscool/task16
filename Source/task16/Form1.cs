@@ -21,6 +21,7 @@ namespace task16
         {
         }
 
+        //Функция которая  будет вставлять данные в таблицу MySQL.
         private void Add_but_Click(object sender, EventArgs e)
         {
             var testcontext = new databasetask16Entities();
@@ -47,7 +48,7 @@ namespace task16
                 MessageBox.Show(ex.InnerException.ToString());
             }
         }
-
+        //Функция которая  будет загружать данные из таблицы и привязывать их к форме
         private void LoadToGrid()
         {
             var testcontext = new databasetask16Entities();
@@ -55,6 +56,52 @@ namespace task16
             if (load != null)
             {
                 dataGridView1.DataSource = load.ToList();
+            }
+        }
+        //Функция которая  будет обновлять данные в таблице MySQL
+        private void UpDate_but_Click(object sender, EventArgs e)
+        {
+            int empId;
+            int.TryParse(textId.Text, out empId);
+            var testcontext = new databasetask16Entities();
+            try
+            {
+                var emp = testcontext.human.First(i => i.Id == empId);
+                {
+                    emp.Name = textName.Text;
+                    emp.Email = textEmail.Text;
+                    emp.NumberPhone = textNumberPhone.Text;
+                    emp.Organization = textOrganization.Text;
+                    emp.SurName = textSurName.Text;
+                    emp.Position = textPosition.Text;
+                    emp.Patronymic = textPatronymic.Text;
+                    testcontext.SaveChanges();
+                    LoadToGrid();
+                };
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.InnerException.ToString());
+            }
+        }
+
+        //Функция которая будет удалять данные в MySQL таблицы
+        private void Delete_but_Click(object sender, EventArgs e)
+        {
+            int empId;
+            int.TryParse(textId.Text, out empId);
+            var testcontext = new databasetask16Entities();
+            try
+            {
+                var emp = testcontext.human.First(i => i.Id == empId);
+                testcontext.human.Remove(emp);
+                testcontext.SaveChanges();
+                LoadToGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.InnerException.ToString());
             }
         }
     }
