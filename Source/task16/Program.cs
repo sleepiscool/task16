@@ -14,6 +14,7 @@ namespace task16
         [STAThread]
         static void Main()
         {
+            MySqll.ConnectToDataBAse();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
