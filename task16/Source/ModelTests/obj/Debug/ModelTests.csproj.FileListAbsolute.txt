@@ -1,0 +1,18 @@
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\ModelTests.dll
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\ModelTests.pdb
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\nunit.framework.dll
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\obj\Debug\ModelTests.csprojResolveAssemblyReference.cache
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\obj\Debug\ModelTests.dll
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\obj\Debug\ModelTests.pdb
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\ModelTests.dll.config
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\Model.dll
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\Moq.dll
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\EntityFramework.dll
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\Model.pdb
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\ModelTests\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\мп\task16\Build\Debug\ModelTests.dll.config
+D:\мп\task16\Build\Debug\ModelTests.dll
+D:\мп\task16\Build\Debug\ModelTests.pdb
+D:\мп\task16\Source\ModelTests\obj\Debug\ModelTests.csprojResolveAssemblyReference.cache
+D:\мп\task16\Source\ModelTests\obj\Debug\ModelTests.dll
+D:\мп\task16\Source\ModelTests\obj\Debug\ModelTests.pdb

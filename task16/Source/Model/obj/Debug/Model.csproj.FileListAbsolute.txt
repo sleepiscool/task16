@@ -1,0 +1,22 @@
+c:\users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\bin\Debug\Model.dll.config
+c:\users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\bin\Debug\Model.dll
+c:\users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\bin\Debug\Model.pdb
+c:\users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\bin\Debug\EntityFramework.dll
+c:\users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\obj\Debug\Model.dll
+c:\users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\obj\Debug\Model.pdb
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\bin\Debug\MySql.Data.dll
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\den1sqaa\documents\visual studio 2013\Projects\Model\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\мп\task16\Source\Model\bin\Debug\Model.dll.config
+D:\мп\task16\Source\Model\bin\Debug\Model.dll
+D:\мп\task16\Source\Model\bin\Debug\Model.pdb
+D:\мп\task16\Source\Model\bin\Debug\EntityFramework.dll
+D:\мп\task16\Source\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\мп\task16\Source\Model\bin\Debug\MySql.Data.dll
+D:\мп\task16\Source\Model\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\мп\task16\Source\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\мп\task16\Source\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\мп\task16\Source\Model\obj\Debug\Model.dll
+D:\мп\task16\Source\Model\obj\Debug\Model.pdb
