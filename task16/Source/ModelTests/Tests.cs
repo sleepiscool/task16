@@ -8,45 +8,95 @@ namespace ModelTests
     [TestFixture]
     public class Tests
     {
-
-        private readonly Person _person = new Person  {
-                Name = "Denis",
-                SurName = "Andreev",
-                Patronymic = "Vasiliyvich",
+        [Test]
+        public void DbRepositoryChangePersonTest()
+        {
+            var repository = new DbPersonRepository();
+            var person1 = new Person
+            {
+                Name = "Vasy",
+                SurName = "Pupkin",
+                Patronymic = "Anatolbevich",
                 Position = "Engineer",
                 Organization = "ikci",
                 Email = "denis007_1996@mail.ru",
                 NumberPhone = "89652793643"
             };
+        }
+        [Test]
+        public void TestPerson()
+        {
+            var person1 = new Person
+            {
+                Name = "Vasya",
+                Email = "denis007_1996@mail.ru",
+                NumberPhone = "888888888",
+                Organization = "greenDay",
+                Patronymic = "asdasd",
+                Position = "na4",
+                SurName = "Vasil"
+            };
+            var person2 = new Person("Vasil", "Vasya", "asdasd", "greenDay", "na4", "denis007_1996@mail.ru", "888888888");
+            Assert.IsTrue(person1.GetHashCode() == person2.GetHashCode());
 
+        }
         [Test]
         public void AddUserToRepository()
         {
             var repository = new DbPersonRepository();
-
-            repository.AddPerson(_person);
+            var person1 = new Person
+            {
+                Name = "Vasy",
+                SurName = "Pupkin",
+                Patronymic = "Anatolbevich",
+                Position = "Engineer",
+                Organization = "ikci",
+                Email = "denis007_1996@mail.ru",
+                NumberPhone = "89652793643"
+            };
+            var person2 = new Person
+            {
+                Name = "Denis",
+                SurName = "Andreev",
+                Patronymic = "Ahmdeinov",
+                Position = "Engineer",
+                Organization = "ikci",
+                Email = "den1sqaappkk@mail.ru",
+                NumberPhone = "89818226401"
+            };
+            repository.AddPerson(person1);
 
             var people = repository.GetPeopleList();
+            var enumerable = people as Person[] ?? people.ToArray();
 
-            var userInDb = people.FirstOrDefault(u => u == _person);
+            Assert.IsNull(enumerable.FirstOrDefault(u => u == person2));
+            Assert.IsNotNull(enumerable.FirstOrDefault(u => u == person1));
 
-            Assert.That(userInDb, Is.Not.Null);
+            var samePeople = repository.GetPeopleList().Where(u => u == person1);
 
-            var sameUsers = repository.GetPeopleList().Where(u => u == _person);
-
-            foreach (var personClone in sameUsers)
+            foreach (var personClone in samePeople)
                 repository.DeletePerson(personClone);
 
             people = repository.GetPeopleList();
 
-            Assert.That(people.All(u => u != _person), Is.True);
+            Assert.That(people.All(u => u != person1), Is.True);
         }
-
         [Test]
         public void SearchPersonTest()
         {
+            var person = new Person
+            {
+                Name = "Vasy",
+                SurName = "Pupkin",
+                Patronymic = "Anatolbevich",
+                Position = "Engineer",
+                Organization = "ikci",
+                Email = "denis007_1996@mail.ru",
+                NumberPhone = "89652793643"
+            };
             var repository = new DbPersonRepository();
-            repository.AddPerson(new Person{
+            repository.AddPerson(new Person
+            {
                 Id = 0,
                 Name = "Vasy",
                 SurName = "Pupkin",
@@ -56,65 +106,116 @@ namespace ModelTests
                 Email = "denis007_1996@mail.ru",
                 NumberPhone = "89652793643"
             });
-            repository.AddPerson(_person);
-            Assert.IsTrue(repository.SearchPerson(_person));
-            repository.DeletePerson(_person);
-            Assert.IsFalse(repository.SearchPerson(_person));
+            repository.AddPerson(person);
+            Assert.IsTrue(repository.SearchPerson(person));
+            repository.DeletePerson(person);
+            Assert.IsFalse(repository.SearchPerson(person));
         }
         [Test]
         public void DeleteUserFromList()
         {
+            var person = new Person
+            {
+                Name = "Vasy",
+                SurName = "Pupkin",
+                Patronymic = "Anatolbevich",
+                Position = "Engineer",
+                Organization = "ikci",
+                Email = "denis007_1996@mail.ru",
+                NumberPhone = "89652793643"
+            };
             var peopleList = new ListPersonRepository();
 
-            peopleList.AddPerson(_person);
+            peopleList.AddPerson(person);
 
-            peopleList.DeletePerson(_person);
+            peopleList.DeletePerson(person);
 
             var personFromList = peopleList.GetPeopleList();
 
-            Assert.That(personFromList.All(u => u != _person), Is.True);
+            Assert.That(personFromList.All(u => u != person), Is.True);
         }
 
         [Test]
         public void GetUserFromList()
         {
+            var person = new Person
+            {
+                Name = "Vasy",
+                SurName = "Pupkin",
+                Patronymic = "Anatolbevich",
+                Position = "Engineer",
+                Organization = "ikci",
+                Email = "denis007_1996@mail.ru",
+                NumberPhone = "89652793643"
+            };
             var peopleList = new ListPersonRepository();
 
-            peopleList.AddPerson(_person);
+            peopleList.AddPerson(person);
 
             var peopleFromList = peopleList.GetPeopleList();
 
             var fromList = peopleFromList as Person[] ?? peopleFromList.ToArray();
             var personid = fromList.First().Id;
 
-            var userWithNecessaryId = peopleList.GetPerson(personid);
+            var personWithNecessaryId = peopleList.GetPerson(personid);
 
 
-            Assert.IsTrue(fromList.First().Equals(userWithNecessaryId));
+            Assert.IsTrue(fromList.First().Equals(personWithNecessaryId));
         }
 
         [Test]
         public void UpdateUserInList()
         {
+            var person = new Person
+            {
+                Name = "Vasy",
+                SurName = "Pupkin",
+                Patronymic = "Anatolbevich",
+                Position = "Engineer",
+                Organization = "ikci",
+                Email = "denis007_1996@mail.ru",
+                NumberPhone = "89652793643"
+            };
             var peopleList = new ListPersonRepository();
 
-            peopleList.AddPerson(_person);
+            peopleList.AddPerson(person);
 
             var personFromList = peopleList.GetPeopleList();
 
-            var newUser = (Person) _person.Clone();
+            var newPerson = (Person)person.Clone();
 
-            newUser.Name = "Semen";
+            newPerson.Name = "Evgeniy";
 
-            peopleList.ChangePerson(newUser);
+            peopleList.ChangePerson(newPerson);
 
-            Assert.IsTrue(newUser.Equals(personFromList.First()));
+            Assert.IsTrue(newPerson.Equals(personFromList.First()));
 
-            newUser.Id = 213;
-            newUser.Name = "Vasya";
-            peopleList.ChangePerson(newUser);
+            newPerson.Id = 213;
+            newPerson.Name = "Vasya";
+            peopleList.ChangePerson(newPerson);
 
             Assert.That(peopleList.GetPerson(213), Is.EqualTo(null));
         }
+
+        [Test]
+        public void GetPersonInList()
+        {
+            var person = new Person
+            {
+                Name = "Vasy",
+                SurName = "Pupkin",
+                Patronymic = "Anatolbevich",
+                Position = "Engineer",
+                Organization = "ikci",
+                Email = "denis007_1996@mail.ru",
+                NumberPhone = "89652793643"
+            };
+            var peopleList = new ListPersonRepository();
+
+            peopleList.AddPerson(person);
+
+            Assert.That(peopleList.GetPerson(1), Is.EqualTo(person));
+        }
     }
+
 }
