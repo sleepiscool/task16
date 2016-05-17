@@ -16,3 +16,9 @@ D:\мп\task16\Build\Debug\ModelTests.pdb
 D:\мп\task16\Source\ModelTests\obj\Debug\ModelTests.csprojResolveAssemblyReference.cache
 D:\мп\task16\Source\ModelTests\obj\Debug\ModelTests.dll
 D:\мп\task16\Source\ModelTests\obj\Debug\ModelTests.pdb
+D:\Github\task16\task16\Build\Debug\ModelTests.dll.config
+D:\Github\task16\task16\Build\Debug\ModelTests.dll
+D:\Github\task16\task16\Build\Debug\ModelTests.pdb
+D:\Github\task16\task16\Source\ModelTests\obj\Debug\ModelTests.csprojResolveAssemblyReference.cache
+D:\Github\task16\task16\Source\ModelTests\obj\Debug\ModelTests.dll
+D:\Github\task16\task16\Source\ModelTests\obj\Debug\ModelTests.pdb

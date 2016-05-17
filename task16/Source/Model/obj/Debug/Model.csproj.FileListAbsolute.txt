@@ -20,3 +20,14 @@ D:\мп\task16\Source\Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\мп\task16\Source\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\мп\task16\Source\Model\obj\Debug\Model.dll
 D:\мп\task16\Source\Model\obj\Debug\Model.pdb
+D:\Github\task16\task16\Source\Model\bin\Debug\Model.dll.config
+D:\Github\task16\task16\Source\Model\bin\Debug\Model.dll
+D:\Github\task16\task16\Source\Model\bin\Debug\Model.pdb
+D:\Github\task16\task16\Source\Model\bin\Debug\EntityFramework.dll
+D:\Github\task16\task16\Source\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\task16\task16\Source\Model\bin\Debug\MySql.Data.dll
+D:\Github\task16\task16\Source\Model\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\Github\task16\task16\Source\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\task16\task16\Source\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\Github\task16\task16\Source\Model\obj\Debug\Model.dll
+D:\Github\task16\task16\Source\Model\obj\Debug\Model.pdb
