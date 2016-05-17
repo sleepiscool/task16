@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace Aapplication_model
 {
-    public partial class application_model : Form
+    public partial class application_model_table : Form
     {
-        public application_model()
+        public application_model_table()
         {
             InitializeComponent();
+        }
+
+        private void application_model_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
         }
     }
 }
