@@ -57,9 +57,15 @@ namespace Model
             peopleFromList.Email = person.Email;
         }
 
-        public bool SearchPerson(Person person)
+        public bool ExistPerson(Person person)
         {
             return _people.Any(person1 => person1 == person);
+        }
+
+        public IEnumerable<Person> SearchPerson(string surName, string name, string patronymic, string organization, string position, string email,
+            string numberPhone)
+        {
+            throw new System.NotImplementedException();
         }
 
         /// <summary>

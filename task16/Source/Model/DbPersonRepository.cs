@@ -14,7 +14,7 @@ namespace Model
         /// <summary>
         ///     Строка подключения к базе данных, параметры которой берутся из app.config.
         /// </summary>
-        private readonly string _connectionString = "server=localhost;uid=root;pwd=root;database=databasetask17;";
+        private readonly string _connectionString = "server=localhost;uid=root;pwd=root;database=databasetask18;";
 
         /// <summary>
         ///     Добавляет указанного юзера в репозиторий.
@@ -159,10 +159,52 @@ namespace Model
             }
         }
 
-        public bool SearchPerson(Person person)
+        public bool ExistPerson(Person person)
         {
             var people = GetPeopleList();
             return people.Any(person1 => person1 == person);
+        }
+
+        public IEnumerable<Person> SearchPerson(string surName, string name, string patronymic, string organization, string position, string email,
+            string numberPhone)
+        {
+            var repository = new DbPersonRepository();
+            var personSearch = new Person(surName, name, patronymic, organization,  position,  email,numberPhone);
+
+            var peopleList = repository.GetPeopleList();
+
+            var result = from person in peopleList
+                where ((personSearch.SurName != "1"
+                        ? person.SurName.Equals(personSearch.SurName)
+                        : true)
+                        &
+                          (personSearch.Name != "1"
+                            ? person.Name.Equals(personSearch.Patronymic)
+                            : true)
+                          &
+                          (personSearch.Patronymic != "1"
+                            ? person.Patronymic.Equals(personSearch.Patronymic)
+                            : true)
+                              &
+                              (personSearch.Organization != "1"
+                                ? person.Organization.Equals(personSearch.Organization)
+                                : true)
+                                  &
+                                  (personSearch.Position != "1"
+                                    ? person.Position.Equals(personSearch.Position)
+                                    : true)
+                                      &
+                                      (personSearch.Email != "1"
+                                        ? person.Email.Equals(personSearch.Email)
+                                        : true)
+                                          &
+                                          (personSearch.NumberPhone != "1"
+                                            ? person.NumberPhone.Equals(personSearch.NumberPhone)
+                                            : true))
+                select person;
+
+
+            return result;
         }
 
         /// <summary>

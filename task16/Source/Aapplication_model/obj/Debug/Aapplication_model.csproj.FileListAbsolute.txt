@@ -1,0 +1,15 @@
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.csprojResolveAssemblyReference.cache
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.application_model.resources
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.Properties.Resources.resources
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.csproj.GenerateResource.Cache
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\Aapplication_model.exe.config
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\Aapplication_model.exe
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\Aapplication_model.pdb
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\EntityFramework.dll
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\EntityFramework.SqlServer.dll
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\Model.dll
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\Model.pdb
+D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\EntityFramework.SqlServer.xml
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.exe
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.pdb
