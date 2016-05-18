@@ -59,16 +59,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="application_model_table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="application_model_table.Designer.cs">
+      <DependentUpon>application_model_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="application_model.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="application_model.Designer.cs">
       <DependentUpon>application_model.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="application_model.resx">
       <DependentUpon>application_model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="application_model_table.resx">
+      <DependentUpon>application_model_table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
