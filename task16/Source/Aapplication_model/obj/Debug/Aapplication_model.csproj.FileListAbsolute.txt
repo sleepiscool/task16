@@ -13,3 +13,4 @@ D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\Model.pdb
 D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\EntityFramework.SqlServer.xml
 D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.exe
 D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.pdb
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.application_model_table.resources

@@ -1,25 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Model
 {
-    /// <summary>
-    ///     Репозиторий, в котором хранятся объекты класса Person, основанный на базе данных
-    /// </summary>
     public class DbPersonRepository : IPersonRepository
     {
-        /// <summary>
-        ///     Строка подключения к базе данных, параметры которой берутся из app.config.
-        /// </summary>
-        private readonly string _connectionString = "server=localhost;uid=root;pwd=root;database=databasetask18;";
+        private static readonly string _connectionString = "server=localhost;uid=root;pwd=root;database=databasetask16;";
 
-        /// <summary>
-        ///     Добавляет указанного юзера в репозиторий.
-        /// </summary>
-        /// <param name="person"></param>
         public void AddPerson(Person person)
         {
             using (var connection = new MySqlConnection(_connectionString))
@@ -53,7 +45,30 @@ namespace Model
                 }
             }
         }
+        /// <summary>
+        /// Очищение базы данных
+        /// </summary>
+        public void ClearDataBase()
+        {
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                try
+                {
+                    const string sql = "DELETE FROM people";
+                                 
+                    connection.Open();
 
+                    var cmd = new MySqlCommand(sql, connection);
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+       
         public IEnumerable<Person> GetPeopleList()
         {
             using (var connection = new MySqlConnection(_connectionString))
@@ -173,34 +188,15 @@ namespace Model
 
             var peopleList = repository.GetPeopleList();
 
+
             var result = from person in peopleList
-                where ((personSearch.SurName != "1"
-                        ? person.SurName.Equals(personSearch.SurName)
-                        : true)
-                        &
-                          (personSearch.Name != "1"
-                            ? person.Name.Equals(personSearch.Patronymic)
-                            : true)
-                          &
-                          (personSearch.Patronymic != "1"
-                            ? person.Patronymic.Equals(personSearch.Patronymic)
-                            : true)
-                              &
-                              (personSearch.Organization != "1"
-                                ? person.Organization.Equals(personSearch.Organization)
-                                : true)
-                                  &
-                                  (personSearch.Position != "1"
-                                    ? person.Position.Equals(personSearch.Position)
-                                    : true)
-                                      &
-                                      (personSearch.Email != "1"
-                                        ? person.Email.Equals(personSearch.Email)
-                                        : true)
-                                          &
-                                          (personSearch.NumberPhone != "1"
-                                            ? person.NumberPhone.Equals(personSearch.NumberPhone)
-                                            : true))
+                         where (name == " ") || person.Name.Equals(name)
+                         && ((surName == " ") || person.SurName.Equals(surName))
+                         && ((patronymic == " ") || person.Patronymic.Equals(patronymic))
+                         && ((organization == " ") || person.Organization.Equals(organization))
+                         && ((position == " ") || person.Position.Equals(position))
+                         && ((email == " ") || person.Email.Equals(email))
+                         && ((numberPhone == " ") || person.NumberPhone.Equals(numberPhone))
                 select person;
 
 

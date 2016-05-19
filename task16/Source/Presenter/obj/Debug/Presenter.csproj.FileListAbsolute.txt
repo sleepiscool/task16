@@ -1,0 +1,11 @@
+D:\мп\task16\task16\Source\Presenter\obj\Debug\Presenter.csprojResolveAssemblyReference.cache
+D:\мп\task16\task16\Source\Presenter\bin\Debug\Presenter.dll
+D:\мп\task16\task16\Source\Presenter\bin\Debug\Presenter.pdb
+D:\мп\task16\task16\Source\Presenter\bin\Debug\LightInject.dll
+D:\мп\task16\task16\Source\Presenter\bin\Debug\Model.dll
+D:\мп\task16\task16\Source\Presenter\bin\Debug\EntityFramework.dll
+D:\мп\task16\task16\Source\Presenter\bin\Debug\Model.pdb
+D:\мп\task16\task16\Source\Presenter\bin\Debug\LightInject.pdb
+D:\мп\task16\task16\Source\Presenter\bin\Debug\LightInject.xml
+D:\мп\task16\task16\Source\Presenter\obj\Debug\Presenter.dll
+D:\мп\task16\task16\Source\Presenter\obj\Debug\Presenter.pdb

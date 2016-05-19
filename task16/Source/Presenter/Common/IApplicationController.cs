@@ -4,7 +4,7 @@ namespace Aapplication_model.IoC
 {
     public interface IApplicationController
     {
-        IApplicationController RegisterView<TView, TImplementation>(LifeTime lifeTime = LifeTime.PerContainer)
+        IApplicationController RegisterView<TView, TImplementation>(LifeTime lifeTime = LifeTime.PerContainer);
             //where TImplementation : class, TView
             //where TView : IView;
 

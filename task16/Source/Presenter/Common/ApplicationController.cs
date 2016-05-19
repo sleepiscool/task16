@@ -67,6 +67,35 @@ namespace Presenter.Common
         //    return this;
         //}
 
-        
+
+        public IApplicationController RegisterView<TView, TImplementation>(LifeTime lifeTime = LifeTime.PerContainer)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IApplicationController RegisterInstance<TArgument>(TArgument instance)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IApplicationController RegisterInstance<TArgument>(TArgument instance, LifeTime lifeTime = LifeTime.PerContainer)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IApplicationController RegisterService<TService, TImplementation>() where TImplementation : class, TService
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IApplicationController RegisterService<TService, TImplementation>(LifeTime lifeTime = LifeTime.PerContainer) where TImplementation : class, TService
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public TService Resolve<TService>()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

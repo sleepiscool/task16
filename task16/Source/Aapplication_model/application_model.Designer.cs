@@ -195,14 +195,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-<<<<<<< HEAD
+
             this.Text = "Aapplication_model";
-            this.Load += new System.EventHandler(this.application_model_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-=======
-            this.Name = "application_model";
+
             this.Text = "application_model";
->>>>>>> 396491dce4c72c91d4276885ece3382f7a04d8bb
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,7 +212,7 @@
         private System.Windows.Forms.TextBox Position;
         private System.Windows.Forms.TextBox Organization;
         private System.Windows.Forms.TextBox Patronymic;
-        private System.Windows.Forms.TextBox Name;
+        private new System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.TextBox Surname;
         private System.Windows.Forms.TextBox ID;
         private System.Windows.Forms.Label label8;
