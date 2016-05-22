@@ -7,7 +7,7 @@ using NUnit.Framework.SyntaxHelpers;
 namespace ModelTests
 {
     [TestFixture]
-    public class Tests
+    public class Tests 
     {
         [Test]
         public void AddUserToRepository()
@@ -52,74 +52,6 @@ namespace ModelTests
             Assert.That(people.All(u => u != person1), Is.True);
         }
         
-        [Test]
-        public void DeleteUserFromList()
-        {
-            var person = new Person
-            {
-                Name = "Vasy",
-                SurName = "Pupkin",
-                Patronymic = "Anatolbevich",
-                Position = "Engineer",
-                Organization = "ikci",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var peopleList = new ListPersonRepository();
-
-            peopleList.AddPerson(person);
-            Assert.IsTrue(peopleList.ExistPerson(person));
-            peopleList.DeletePerson(person);
-            var personFromList = peopleList.GetPeopleList();
-
-            Assert.That(personFromList.All(u => u != person), Is.True);
-        }
-
-        [Test]
-        public void GetPersonInList()
-        {
-            var person = new Person
-            {
-                Name = "Vasy",
-                SurName = "Pupkin",
-                Patronymic = "Anatolbevich",
-                Position = "Engineer",
-                Organization = "ikci",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var peopleList = new ListPersonRepository();
-
-            peopleList.AddPerson(person);
-
-            Assert.That(peopleList.GetPerson(1), Is.EqualTo(person));
-            Assert.IsNotNull(peopleList.SearchPerson(" ", "Vasy", " ", " ", " ", " ", " "));
-        }
-
-        [Test]
-        public void GetUserFromList()
-        {
-            var person = new Person
-            {
-                Name = "Vasy",
-                SurName = "Pupkin",
-                Patronymic = "Anatolbevich",
-                Position = "Engineer",
-                Organization = "ikci",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var peopleList = new ListPersonRepository();
-
-            peopleList.AddPerson(person);
-
-            var peopleFromList = peopleList.GetPeopleList();
-            var fromList = peopleFromList as Person[] ?? peopleFromList.ToArray();
-            var personid = fromList.First().Id;
-            var personWithNecessaryId = peopleList.GetPerson(personid);
-
-            Assert.IsTrue(fromList.First().Equals(personWithNecessaryId));
-        }
 
         [Test]
         public void SearchPersonTest()
@@ -272,41 +204,9 @@ namespace ModelTests
             };
             var person2 = new Person("Vasil", "Vasya", "asdasd", "greenDay", "na4", "denis007_1996@mail.ru", "888888888");
             Assert.IsTrue(person1.GetHashCode() == person2.GetHashCode());
+            Assert.IsFalse((Person) person1.Clone() != person2);
             var temp = new List();
             Assert.IsFalse(person1.Equals(temp));
-        }
-
-        [Test]
-        public void UpdateUserInList()
-        {
-            var person = new Person
-            {
-                Name = "Vasy",
-                SurName = "Pupkin",
-                Patronymic = "Anatolbevich",
-                Position = "Engineer",
-                Organization = "ikci",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var peopleList = new ListPersonRepository();
-
-            peopleList.AddPerson(person);
-
-            var personFromList = peopleList.GetPeopleList();
-            var newPerson = (Person) person.Clone();
-
-            newPerson.Name = "Evgeniy";
-
-            peopleList.ChangePerson(newPerson);
-
-            Assert.IsTrue(newPerson.Equals(personFromList.First()));
-
-            newPerson.Id = 213;
-            newPerson.Name = "Vasya";
-            peopleList.ChangePerson(newPerson);
-
-            Assert.That(peopleList.GetPerson(213), Is.EqualTo(null));
         }
     }
 }

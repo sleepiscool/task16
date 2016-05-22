@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="DbPersonRepository.cs" />
     <Compile Include="IPersonRepository.cs" />
-    <Compile Include="ListPersonRepository.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

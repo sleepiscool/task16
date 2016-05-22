@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -10,11 +11,16 @@ namespace Model
 {
     public class DbPersonRepository : IPersonRepository
     {
-        private static readonly string _connectionString = "server=localhost;uid=root;pwd=root;database=databasetask16;";
+        private static readonly string ConnectionString = 
+            ConfigurationManager.ConnectionStrings["task16"].ConnectionString;
 
+        /// <summary>
+        /// добавление экземпляра класса Person в бл
+        /// </summary>
+        /// <param name="person"></param>
         public void AddPerson(Person person)
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(ConnectionString))
             {
                 using (var contextDb = new PersonDbContext(connection, false))
                 {
@@ -45,33 +51,14 @@ namespace Model
                 }
             }
         }
+
         /// <summary>
-        /// Очищение базы данных
+        ///     Получает всех обьектов класса Person из бд
         /// </summary>
-        public void ClearDataBase()
-        {
-            using (var connection = new MySqlConnection(_connectionString))
-            {
-                try
-                {
-                    const string sql = "DELETE FROM people";
-                                 
-                    connection.Open();
-
-                    var cmd = new MySqlCommand(sql, connection);
-
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-       
+        /// <returns>people</returns>
         public IEnumerable<Person> GetPeopleList()
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(ConnectionString))
             {
                 using (var contextDb = new PersonDbContext(connection, false))
                 {
@@ -105,9 +92,13 @@ namespace Model
             }
         }
 
+        /// <summary>
+        ///     удаляет экземпляр класса Person из бд
+        /// </summary>
+        /// <param name="person"></param>
         public void DeletePerson(Person person)
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(ConnectionString))
             {
                 using (var contextDb = new PersonDbContext(connection, false))
                 {
@@ -140,9 +131,13 @@ namespace Model
             }
         }
 
+        /// <summary>
+        ///     Изменяет параметры пользователя в бд
+        /// </summary>
+        /// <param name="person"></param>
         public void ChangePerson(Person person)
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(ConnectionString))
             {
                 using (var contextDb = new PersonDbContext(connection, false))
                 {
@@ -174,29 +169,34 @@ namespace Model
             }
         }
 
+        /// <summary>
+        ///     Проверка на наличие пользователя в бд
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
         public bool ExistPerson(Person person)
         {
             var people = GetPeopleList();
             return people.Any(person1 => person1 == person);
         }
 
-        public IEnumerable<Person> SearchPerson(string surName, string name, string patronymic, string organization, string position, string email,
+        public IEnumerable<Person> SearchPerson(string surName, string name, string patronymic, string organization,
+            string position, string email,
             string numberPhone)
         {
             var repository = new DbPersonRepository();
-            var personSearch = new Person(surName, name, patronymic, organization,  position,  email,numberPhone);
 
             var peopleList = repository.GetPeopleList();
 
 
             var result = from person in peopleList
-                         where (name == " ") || person.Name.Equals(name)
-                         && ((surName == " ") || person.SurName.Equals(surName))
-                         && ((patronymic == " ") || person.Patronymic.Equals(patronymic))
-                         && ((organization == " ") || person.Organization.Equals(organization))
-                         && ((position == " ") || person.Position.Equals(position))
-                         && ((email == " ") || person.Email.Equals(email))
-                         && ((numberPhone == " ") || person.NumberPhone.Equals(numberPhone))
+                where (name == " ") || person.Name.Equals(name)
+                      && ((surName == " ") || person.SurName.Equals(surName))
+                      && ((patronymic == " ") || person.Patronymic.Equals(patronymic))
+                      && ((organization == " ") || person.Organization.Equals(organization))
+                      && ((position == " ") || person.Position.Equals(position))
+                      && ((email == " ") || person.Email.Equals(email))
+                      && ((numberPhone == " ") || person.NumberPhone.Equals(numberPhone))
                 select person;
 
 
@@ -204,10 +204,34 @@ namespace Model
         }
 
         /// <summary>
+        /// Очищение базы данных
+        /// </summary>
+        public void ClearDataBase()
+        {
+            using (var connection = new MySqlConnection(ConnectionString))
+            {
+                try
+                {
+                    const string sql = "DELETE FROM people";
+
+                    connection.Open();
+
+                    var cmd = new MySqlCommand(sql, connection);
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
         ///     Сохраняет внесенные в контекст изменения в базе данных.
         /// </summary>
         /// <param name="context">Контекст, в котором произошли изменения.</param>
-        private static void SaveChanges(PersonDbContext context)
+        private static void SaveChanges(DbContext context)
         {
             bool saveFailed;
             do
