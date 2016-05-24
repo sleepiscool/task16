@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.NumberPhone = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.TextBox();
             this.Position = new System.Windows.Forms.TextBox();
             this.Organization = new System.Windows.Forms.TextBox();
             this.Patronymic = new System.Windows.Forms.TextBox();
             this.Name = new System.Windows.Forms.TextBox();
-            this.Surname = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,7 +42,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.Label();
+            this.Surname = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // NumberPhone
@@ -87,20 +90,6 @@
             this.Name.Name = "Name";
             this.Name.Size = new System.Drawing.Size(173, 20);
             this.Name.TabIndex = 28;
-            // 
-            // Surname
-            // 
-            this.Surname.Location = new System.Drawing.Point(105, 49);
-            this.Surname.Name = "Surname";
-            this.Surname.Size = new System.Drawing.Size(173, 20);
-            this.Surname.TabIndex = 27;
-            // 
-            // ID
-            // 
-            this.ID.Location = new System.Drawing.Point(105, 21);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(173, 20);
-            this.ID.TabIndex = 26;
             // 
             // label8
             // 
@@ -165,20 +154,36 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "SurName";
             // 
-            // label1
+            // Id
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "ID";
+            this.Id.AutoSize = true;
+            this.Id.Location = new System.Drawing.Point(7, 22);
+            this.Id.Name = "Id";
+            this.Id.Size = new System.Drawing.Size(16, 13);
+            this.Id.TabIndex = 34;
+            this.Id.Text = "Id";
+            // 
+            // Surname
+            // 
+            this.Surname.Location = new System.Drawing.Point(105, 49);
+            this.Surname.Name = "Surname";
+            this.Surname.Size = new System.Drawing.Size(173, 20);
+            this.Surname.TabIndex = 27;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(106, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(173, 20);
+            this.textBox1.TabIndex = 35;
             // 
             // application_model
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 266);
+            this.ClientSize = new System.Drawing.Size(294, 282);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Id);
             this.Controls.Add(this.NumberPhone);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.Position);
@@ -186,7 +191,6 @@
             this.Controls.Add(this.Patronymic);
             this.Controls.Add(this.Name);
             this.Controls.Add(this.Surname);
-            this.Controls.Add(this.ID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -194,12 +198,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-
-            this.Text = "Aapplication_model";
-
+            this.Name = "application_model";
             this.Text = "application_model";
-
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,8 +214,6 @@
         private System.Windows.Forms.TextBox Organization;
         private System.Windows.Forms.TextBox Patronymic;
         private new System.Windows.Forms.TextBox Name;
-        private System.Windows.Forms.TextBox Surname;
-        private System.Windows.Forms.TextBox ID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -222,6 +221,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Id;
+        private System.Windows.Forms.TextBox Surname;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

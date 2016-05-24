@@ -5,8 +5,8 @@ namespace Aapplication_model.IoC
     public interface IApplicationController
     {
         IApplicationController RegisterView<TView, TImplementation>(LifeTime lifeTime = LifeTime.PerContainer);
-            //where TImplementation : class, TView
-            //where TView : IView;
+            where TImplementation : class, TView
+            where TView : IView;
 
         IApplicationController RegisterInstance<TArgument>(TArgument instance);
 
@@ -18,11 +18,11 @@ namespace Aapplication_model.IoC
         IApplicationController RegisterService<TService, TImplementation>(LifeTime lifeTime = LifeTime.PerContainer)
             where TImplementation : class, TService;
 
-        //void Run<TPresenter>()
-        //    where TPresenter : class, IPresenter;
+        void Run<TPresenter>()
+            where TPresenter : class, IPresenter;
 
-        //void Run<TPresenter, TArgumnent>(TArgumnent argumnent)
-        //    where TPresenter : class, IPresenter<TArgumnent>;
+        void Run<TPresenter, TArgumnent>(TArgumnent argumnent)
+            where TPresenter : class, IPresenter<TArgumnent>;
 
         TService Resolve<TService>();
     }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aapplication_model", "Aappl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presenter", "Presenter\Presenter.csproj", "{D3219CF5-A0BC-4C7E-B97F-3878C3CA1D53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkersManagement", "WorkersManagement\WorkersManagement.csproj", "{3583653E-556B-4A3C-84F6-98DEF1B6FF32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D3219CF5-A0BC-4C7E-B97F-3878C3CA1D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3219CF5-A0BC-4C7E-B97F-3878C3CA1D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3219CF5-A0BC-4C7E-B97F-3878C3CA1D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3583653E-556B-4A3C-84F6-98DEF1B6FF32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3583653E-556B-4A3C-84F6-98DEF1B6FF32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3583653E-556B-4A3C-84F6-98DEF1B6FF32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3583653E-556B-4A3C-84F6-98DEF1B6FF32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
