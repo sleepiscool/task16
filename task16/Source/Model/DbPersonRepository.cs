@@ -11,11 +11,23 @@ namespace Model
 {
     public class DbPersonRepository : IPersonRepository
     {
-        private static readonly string ConnectionString = 
-            ConfigurationManager.ConnectionStrings["task16"].ConnectionString;
+        private static readonly string ConnectionString =
+            ConfigurationManager.ConnectionStrings["LocalPersonDatabase"].ConnectionString;
+
+        static DbPersonRepository()
+        {
+            try
+            {
+                ConnectionString = ConfigurationManager.ConnectionStrings["LocalPersonDatabase"].ConnectionString;
+            }
+            catch (Exception)
+            {
+                //  
+            }
+        }
 
         /// <summary>
-        /// добавление экземпляра класса Person в бл
+        /// добавление экземпляра класса Person в бд
         /// </summary>
         /// <param name="person"></param>
         public void AddPerson(Person person)
@@ -51,6 +63,7 @@ namespace Model
                 }
             }
         }
+
 
         /// <summary>
         ///     Получает всех обьектов класса Person из бд
@@ -91,43 +104,98 @@ namespace Model
                 return people;
             }
         }
+        /// <summary>
+        /// Возвращает объект класса Person с заданным id, если он существует.
+        /// </summary>
+        /// <param name="id">id искомого объекта класса Person.</param>
+        /// <returns>Объект класса Person с заданным id. Если такого нет то null.</returns>
+        public Person GetPerson(int id)
+        {
+            try
+            {
+                using (var connection = new MySqlConnection(ConnectionString))
+                {
+                    using (var contextDb = new PersonDbContext(connection, false))
+                    {
+                        contextDb.Database.CreateIfNotExists();
+                    }
 
+                    connection.Open();
+
+                    var transaction = connection.BeginTransaction();
+
+                    Person person;
+
+                    try
+                    {
+                        using (var context = new PersonDbContext(connection, false))
+                        {
+
+                            context.Database.UseTransaction(transaction);
+
+                            person = context.People.SingleOrDefault(u => u.Id == id);
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+
+                    return person;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Пользователь с таким ID не найден!");
+                return null;
+            }
+        }
         /// <summary>
         ///     удаляет экземпляр класса Person из бд
         /// </summary>
         /// <param name="person"></param>
         public void DeletePerson(Person person)
         {
-            using (var connection = new MySqlConnection(ConnectionString))
+            try
             {
-                using (var contextDb = new PersonDbContext(connection, false))
+                using (var connection = new MySqlConnection(ConnectionString))
                 {
-                    contextDb.Database.CreateIfNotExists();
-                }
-
-                connection.Open();
-
-                var transaction = connection.BeginTransaction();
-
-                try
-                {
-                    using (var context = new PersonDbContext(connection, false))
+                    using (var contextDb = new PersonDbContext(connection, false))
                     {
-                        context.Database.UseTransaction(transaction);
-
-                        context.People.Attach(person);
-                        context.People.Remove(person);
-
-                        SaveChanges(context);
+                        contextDb.Database.CreateIfNotExists();
                     }
 
-                    transaction.Commit();
+                    connection.Open();
+
+                    var transaction = connection.BeginTransaction();
+
+                    try
+                    {
+                        using (var context = new PersonDbContext(connection, false))
+                        {
+
+                            context.Database.UseTransaction(transaction);
+
+                            context.Entry(person).State = EntityState.Deleted;
+
+                            SaveChanges(context);
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
                 }
-                catch
-                {
-                    transaction.Rollback();
-                    throw;
-                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("asdas");
             }
         }
 
@@ -158,7 +226,7 @@ namespace Model
 
                         SaveChanges(context);
                     }
-
+                    
                     transaction.Commit();
                 }
                 catch
@@ -167,6 +235,7 @@ namespace Model
                     throw;
                 }
             }
+
         }
 
         /// <summary>
@@ -188,18 +257,36 @@ namespace Model
 
             var peopleList = repository.GetPeopleList();
 
-
+            
             var result = from person in peopleList
-                where (name == " ") || person.Name.Equals(name)
-                      && ((surName == " ") || person.SurName.Equals(surName))
-                      && ((patronymic == " ") || person.Patronymic.Equals(patronymic))
-                      && ((organization == " ") || person.Organization.Equals(organization))
-                      && ((position == " ") || person.Position.Equals(position))
-                      && ((email == " ") || person.Email.Equals(email))
-                      && ((numberPhone == " ") || person.NumberPhone.Equals(numberPhone))
-                select person;
-
-
+                where ((surName != ""
+                            ? person.SurName.Equals(surName)
+                            : true)
+                        &
+                          (name != ""
+                            ? person.Name.Equals(name)
+                            : true)
+                        &
+                        (patronymic != ""
+                            ? person.Patronymic.Equals(patronymic)
+                            : true)
+                        &
+                        (organization != ""
+                            ? person.Organization.Equals(organization)
+                            : true)
+                        &
+                        (position != ""
+                            ? person.Position.Equals(position)
+                            : true)
+                        &
+                        (email != ""
+                            ? person.Email.Equals(email)
+                            : true)
+                        &
+                        (numberPhone != ""
+                            ? person.NumberPhone.Equals(numberPhone)
+                            : true))
+                    select person;
             return result;
         }
 

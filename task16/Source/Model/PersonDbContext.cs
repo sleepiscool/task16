@@ -17,8 +17,7 @@ namespace Model
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Person>().MapToStoredProcedures();
-            modelBuilder.Entity<Person>().HasKey(person => person.Id);
+            modelBuilder.Entity<Person>().Property(person => person.Id).HasColumnName("Id");
             modelBuilder.Entity<Person>().Property(person => person.Name).HasColumnName("Name");
             modelBuilder.Entity<Person>().Property(person => person.SurName).HasColumnName("SurName");
             modelBuilder.Entity<Person>().Property(person => person.Email).HasColumnName("Email");

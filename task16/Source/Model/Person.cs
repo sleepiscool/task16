@@ -31,6 +31,7 @@ namespace Model
         public Person()
         {
         }
+
         /// <summary>
         /// Индефикатор объекта
         /// </summary>

@@ -1,5 +1,4 @@
 D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.csprojResolveAssemblyReference.cache
-D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.application_model.resources
 D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.Properties.Resources.resources
 D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.csproj.GenerateResource.Cache
 D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\Aapplication_model.exe.config
@@ -13,4 +12,10 @@ D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\Model.pdb
 D:\мп\task16\task16\Source\Aapplication_model\bin\Debug\EntityFramework.SqlServer.xml
 D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.exe
 D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.pdb
-D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.application_model_table.resources
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.ApplicationModelTable.resources
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.ApplicationModel.resources
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.SearchPerson.resources
+D:\мп\task16\task16\Source\Aapplication_model\obj\Debug\Aapplication_model.DeletePerson.resources
+D:\мп\task16\task16\Build\Debug\Aapplication_model.exe.config
+D:\мп\task16\task16\Build\Debug\Aapplication_model.exe
+D:\мп\task16\task16\Build\Debug\Aapplication_model.pdb

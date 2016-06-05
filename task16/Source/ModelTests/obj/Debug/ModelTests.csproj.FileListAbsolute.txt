@@ -28,3 +28,12 @@ D:\мп\task16\task16\Build\Debug\ModelTests.pdb
 D:\мп\task16\task16\Source\ModelTests\obj\Debug\ModelTests.csprojResolveAssemblyReference.cache
 D:\мп\task16\task16\Source\ModelTests\obj\Debug\ModelTests.dll
 D:\мп\task16\task16\Source\ModelTests\obj\Debug\ModelTests.pdb
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\ModelTests.dll.config
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\ModelTests.dll
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\ModelTests.pdb
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\Model.dll
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\Moq.dll
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\nunit.framework.dll
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\EntityFramework.dll
+D:\мп\task16\task16\Source\ModelTests\bin\Debug\Model.pdb

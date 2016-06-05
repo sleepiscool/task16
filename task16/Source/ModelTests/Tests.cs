@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Linq;
+﻿using System.Linq;
 using Model;
 using NUnit.Framework;
 using NUnit.Framework.SyntaxHelpers;
@@ -7,7 +6,7 @@ using NUnit.Framework.SyntaxHelpers;
 namespace ModelTests
 {
     [TestFixture]
-    public class Tests 
+    public class Tests
     {
         [Test]
         public void AddUserToRepository()
@@ -51,7 +50,6 @@ namespace ModelTests
 
             Assert.That(people.All(u => u != person1), Is.True);
         }
-        
 
         [Test]
         public void SearchPersonTest()
@@ -82,111 +80,6 @@ namespace ModelTests
             Assert.IsTrue(repository.ExistPerson(person));
             repository.DeletePerson(person);
             Assert.IsFalse(repository.ExistPerson(person));
-        }
-
-        [Test]
-        public void SearchWithParametres()
-        {
-            var repository = new DbPersonRepository();
-            var person1 = new Person
-            {
-                SurName = "Pupkin",
-                Name = "Vasy",
-                Patronymic = "Anatolbevich",
-                Organization = "ikci",
-                Position = "Engineer",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var person2 = new Person
-            {
-                SurName = "Pupkin",
-                Name = "Evgen",
-                Patronymic = "Anatolbevich",
-                Organization = "ikci",
-                Position = "Engineer",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var person3 = new Person
-            {
-                SurName = "Pupkin",
-                Name = "Denis",
-                Patronymic = "Anatolbevich",
-                Organization = "ikci",
-                Position = "Engineer",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var person4 = new Person
-            {
-                SurName = "Pupkin",
-                Name = "Vova",
-                Patronymic = "Anatolbevich",
-                Organization = "ikci",
-                Position = "Engineer",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var person5 = new Person
-            {
-                SurName = "Pupkin",
-                Name = "Semen",
-                Patronymic = "Anatolbevich",
-                Organization = "ikci",
-                Position = "Engineer",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var person6 = new Person
-            {
-                SurName = "123",
-                Name = "Leha",
-                Patronymic = "Anatolbevich",
-                Organization = "ikci",
-                Position = "Engineer",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var person7 = new Person
-            {
-                SurName = "Andreev",
-                Name = "Denis",
-                Patronymic = "Anatolbevich",
-                Organization = "ikci",
-                Position = "Engineer",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-            var person8 = new Person
-            {
-                SurName = "Andreev",
-                Name = "Denis",
-                Patronymic = "asd",
-                Organization = "ikci",
-                Position = "Engineer",
-                Email = "denis007_1996@mail.ru",
-                NumberPhone = "89652793643"
-            };
-
-            repository.AddPerson(person1);
-            repository.AddPerson(person2);
-            repository.AddPerson(person3);
-            repository.AddPerson(person4);
-            repository.AddPerson(person5);
-            repository.AddPerson(person6);
-            repository.AddPerson(person7);
-            repository.AddPerson(person8);
-
-            var people = repository.SearchPerson("Andreev", "Denis", "asd", " ", " ", " ", " ");
-            Assert.IsNotNull(people);
-
-            foreach (var person in people)
-                Assert.IsTrue(person.Name.Equals("Denis") && person.SurName.Equals("Andreev") &&
-                              person.Patronymic.Equals("asd"));
-
-            repository.ClearDataBase();
-            Assert.IsEmpty((ICollection) repository.GetPeopleList());
         }
 
         [Test]

@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Build\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,7 +26,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\Build\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -65,20 +65,34 @@
     <Compile Include="application_model_table.Designer.cs">
       <DependentUpon>application_model_table.cs</DependentUpon>
     </Compile>
-    <Compile Include="application_model.cs">
+    <Compile Include="AddPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="application_model.Designer.cs">
-      <DependentUpon>application_model.cs</DependentUpon>
+    <Compile Include="AddPerson.Designer.cs">
+      <DependentUpon>AddPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="MessageService.cs" />
+    <Compile Include="ChangePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePerson.Designer.cs">
+      <DependentUpon>ChangePerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="application_model.resx">
-      <DependentUpon>application_model.cs</DependentUpon>
+    <Compile Include="SearchPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPerson.Designer.cs">
+      <DependentUpon>SearchPerson.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddPerson.resx">
+      <DependentUpon>AddPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="application_model_table.resx">
       <DependentUpon>application_model_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePerson.resx">
+      <DependentUpon>ChangePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchPerson.resx">
+      <DependentUpon>SearchPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
