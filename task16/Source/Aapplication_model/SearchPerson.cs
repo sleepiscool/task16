@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 
+/// <summary>
+///  Форма для поиска пользователя
+/// </summary>
 namespace Aapplication_model
 {
     public partial class SearchPerson : Form
@@ -20,6 +23,9 @@ namespace Aapplication_model
             button_change.Enabled = false;
         }
 
+        /// <summary>
+        ///  Поиск пользователя
+        /// </summary>
         private void Search_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -45,11 +51,17 @@ namespace Aapplication_model
                 dataGridView1.Rows[j++].Cells["NumberPhone"].Value = person.NumberPhone ?? "";
             }
         }
+        /// <summary>
+        /// Событие чтобы запускать форму в другом окне
+        /// </summary>
         public void Run()
         {
             ShowDialog();
         }
 
+        /// <summary>
+        ///  Удаление пользователя
+        /// </summary>
         private void button_delete_Click(object sender, EventArgs e)
         {
             var row = dataGridView1.CurrentCell.RowIndex;
@@ -68,6 +80,9 @@ namespace Aapplication_model
             Search_Click(new object(), new EventArgs());
         }
 
+        /// <summary>
+        ///  Изменение пользователя
+        /// </summary>
         private void button_change_Click(object sender, EventArgs e)
         {
             var row = dataGridView1.CurrentCell.RowIndex;
@@ -84,13 +99,17 @@ namespace Aapplication_model
             new ChangePerson(person).Run();
             Search_Click(new object(), new EventArgs());
         }
-
+        /// <summary>
+        /// Событие при выделения строки в таблице
+        /// </summary>
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             button_delete.Enabled = true;
             button_change.Enabled = true;
         }
-
+        /// <summary>
+        /// Событие при отмене выделения строки
+        /// </summary>
         private void dataGridView1_RowLeave(object sender, EventArgs e)
         {
             button_delete.Enabled = false;

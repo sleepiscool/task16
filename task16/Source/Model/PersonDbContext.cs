@@ -8,6 +8,9 @@ namespace Model
     [DbConfigurationType(typeof (MySqlEFConfiguration))]
     public class PersonDbContext : DbContext
     {
+        /// <summary>
+        /// Создание PersonDbContext и описание структуры базы данных.
+        /// </summary>
         public PersonDbContext(DbConnection existingConnection, bool contextOwnsConnection)
             : base(existingConnection, contextOwnsConnection)
         {
@@ -17,7 +20,6 @@ namespace Model
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Person>().Property(person => person.Id).HasColumnName("Id");
             modelBuilder.Entity<Person>().Property(person => person.Name).HasColumnName("Name");
             modelBuilder.Entity<Person>().Property(person => person.SurName).HasColumnName("SurName");
             modelBuilder.Entity<Person>().Property(person => person.Email).HasColumnName("Email");

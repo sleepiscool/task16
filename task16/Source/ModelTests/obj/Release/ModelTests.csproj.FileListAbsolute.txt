@@ -13,3 +13,15 @@ D:\мп\task16\task16\Source\ModelTests\bin\Release\MySql.Data.Entity.EF6.dll
 D:\мп\task16\task16\Source\ModelTests\bin\Release\nunit.framework.dll
 D:\мп\task16\task16\Source\ModelTests\bin\Release\EntityFramework.dll
 D:\мп\task16\task16\Source\ModelTests\bin\Release\Model.pdb
+E:\мп\task16\task16\Source\ModelTests\bin\Release\ModelTests.dll.config
+E:\мп\task16\task16\Source\ModelTests\bin\Release\ModelTests.dll
+E:\мп\task16\task16\Source\ModelTests\bin\Release\ModelTests.pdb
+E:\мп\task16\task16\Source\ModelTests\bin\Release\Model.dll
+E:\мп\task16\task16\Source\ModelTests\bin\Release\Moq.dll
+E:\мп\task16\task16\Source\ModelTests\bin\Release\MySql.Data.Entity.EF6.dll
+E:\мп\task16\task16\Source\ModelTests\bin\Release\nunit.framework.dll
+E:\мп\task16\task16\Source\ModelTests\bin\Release\EntityFramework.dll
+E:\мп\task16\task16\Source\ModelTests\bin\Release\Model.pdb
+E:\мп\task16\task16\Source\ModelTests\obj\Release\ModelTests.csprojResolveAssemblyReference.cache
+E:\мп\task16\task16\Source\ModelTests\obj\Release\ModelTests.dll
+E:\мп\task16\task16\Source\ModelTests\obj\Release\ModelTests.pdb

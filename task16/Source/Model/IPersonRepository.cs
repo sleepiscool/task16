@@ -33,7 +33,7 @@ namespace Model
         /// <returns></returns>
         bool ExistPerson(Person person);
         /// <summary>
-        /// возвращает все обьекты класса Person в дб, которые удовлетворяют данным параметрам
+        /// Ищет пользователей по заданными критериям
         /// </summary>
         /// <param name="surName">Фамилия</param>
         /// <param name="name">Имя</param>
@@ -41,8 +41,8 @@ namespace Model
         /// <param name="organization">Организация</param>
         /// <param name="position">Должность</param>
         /// <param name="email">Электронная почта</param>
-        /// <param name="numberPhone">номер телефона</param>
-        /// <returns></returns>
+        /// <param name="numberPhone">Номер телефона</param>
+        /// <returns>коллекция  IEnumerable<Person>, которые удовлетворяют входным параметрам</returns>
         IEnumerable<Person> SearchPerson(string surName, string name, string patronymic, string organization, string position, string email,
             string numberPhone);
     }

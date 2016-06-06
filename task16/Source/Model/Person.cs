@@ -115,25 +115,6 @@ namespace Model
             return !(left == right);
         }
         /// <summary>
-        /// Возвращает hachcode данного объекта
-        /// </summary>
-        /// <returns></returns>
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = Id;
-                hashCode = (hashCode*397) ^ (SurName != null ? SurName.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (Name != null ? Name.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (Patronymic != null ? Patronymic.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (Organization != null ? Organization.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (Position != null ? Position.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (Email != null ? Email.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (NumberPhone != null ? NumberPhone.GetHashCode() : 0);
-                return hashCode;
-            }
-        }
-        /// <summary>
         /// Сравнивает объекты
         /// </summary>
         /// <param name="obj"></param>

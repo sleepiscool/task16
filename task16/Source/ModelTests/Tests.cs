@@ -57,14 +57,16 @@ namespace ModelTests
             var person = new Person
             {
                 Name = "Vasy",
-                SurName = "Pupkin",
+                SurName = "Andreev",
                 Patronymic = "Anatolbevich",
                 Position = "Engineer",
                 Organization = "ikci",
                 Email = "denis007_1996@mail.ru",
                 NumberPhone = "89652793643"
             };
+
             var repository = new DbPersonRepository();
+            repository.AddPerson(person);
             repository.AddPerson(new Person
             {
                 Id = 0,
@@ -76,7 +78,21 @@ namespace ModelTests
                 Email = "denis007_1996@mail.ru",
                 NumberPhone = "89652793643"
             });
-            repository.AddPerson(person);
+            repository.AddPerson(new Person
+            {
+                Id = 0,
+                Name = "Leha",
+                SurName = "Andreev",
+                Patronymic = "Anatolbevich",
+                Position = "Engineer",
+                Organization = "ikci",
+                Email = "denis007_1996@mail.ru",
+                NumberPhone = "89652793643"
+            });
+            var personListWithParametrs = repository.SearchPerson("", "Andreev", "", "", "", "", "");
+            foreach (var temp in personListWithParametrs)
+                Assert.IsTrue(temp.SurName.Equals("Andreev"));
+
             Assert.IsTrue(repository.ExistPerson(person));
             repository.DeletePerson(person);
             Assert.IsFalse(repository.ExistPerson(person));
@@ -96,7 +112,7 @@ namespace ModelTests
                 SurName = "Vasil"
             };
             var person2 = new Person("Vasil", "Vasya", "asdasd", "greenDay", "na4", "denis007_1996@mail.ru", "888888888");
-            Assert.IsTrue(person1.GetHashCode() == person2.GetHashCode());
+            Assert.IsFalse(person1.GetHashCode() == person2.GetHashCode());
             Assert.IsFalse((Person) person1.Clone() != person2);
             var temp = new List();
             Assert.IsFalse(person1.Equals(temp));

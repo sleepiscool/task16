@@ -11,9 +11,10 @@ namespace Model
 {
     public class DbPersonRepository : IPersonRepository
     {
-        private static readonly string ConnectionString =
-            ConfigurationManager.ConnectionStrings["LocalPersonDatabase"].ConnectionString;
-
+        private static readonly string ConnectionString;
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
         static DbPersonRepository()
         {
             try
@@ -22,7 +23,7 @@ namespace Model
             }
             catch (Exception)
             {
-                //  
+                ConnectionString = ConfigurationManager.ConnectionStrings["LocalPersonDatabase"].ConnectionString;
             }
         }
 
@@ -66,7 +67,7 @@ namespace Model
 
 
         /// <summary>
-        ///     Получает всех обьектов класса Person из бд
+        /// Получает всех обьектов класса Person из бд
         /// </summary>
         /// <returns>people</returns>
         public IEnumerable<Person> GetPeopleList()
@@ -105,56 +106,7 @@ namespace Model
             }
         }
         /// <summary>
-        /// Возвращает объект класса Person с заданным id, если он существует.
-        /// </summary>
-        /// <param name="id">id искомого объекта класса Person.</param>
-        /// <returns>Объект класса Person с заданным id. Если такого нет то null.</returns>
-        public Person GetPerson(int id)
-        {
-            try
-            {
-                using (var connection = new MySqlConnection(ConnectionString))
-                {
-                    using (var contextDb = new PersonDbContext(connection, false))
-                    {
-                        contextDb.Database.CreateIfNotExists();
-                    }
-
-                    connection.Open();
-
-                    var transaction = connection.BeginTransaction();
-
-                    Person person;
-
-                    try
-                    {
-                        using (var context = new PersonDbContext(connection, false))
-                        {
-
-                            context.Database.UseTransaction(transaction);
-
-                            person = context.People.SingleOrDefault(u => u.Id == id);
-                        }
-
-                        transaction.Commit();
-                    }
-                    catch
-                    {
-                        transaction.Rollback();
-                        throw;
-                    }
-
-                    return person;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Пользователь с таким ID не найден!");
-                return null;
-            }
-        }
-        /// <summary>
-        ///     удаляет экземпляр класса Person из бд
+        /// удаляет экземпляр класса Person из бд
         /// </summary>
         /// <param name="person"></param>
         public void DeletePerson(Person person)
@@ -200,7 +152,7 @@ namespace Model
         }
 
         /// <summary>
-        ///     Изменяет параметры пользователя в бд
+        /// Изменяет параметры пользователя в бд
         /// </summary>
         /// <param name="person"></param>
         public void ChangePerson(Person person)
@@ -239,7 +191,7 @@ namespace Model
         }
 
         /// <summary>
-        ///     Проверка на наличие пользователя в бд
+        /// Проверка на наличие пользователя в бд
         /// </summary>
         /// <param name="person"></param>
         /// <returns></returns>
@@ -248,7 +200,17 @@ namespace Model
             var people = GetPeopleList();
             return people.Any(person1 => person1 == person);
         }
-
+        /// <summary>
+        /// Ищет пользователей по заданными критериям
+        /// </summary>
+        /// <param name="surName">Фамилия</param>
+        /// <param name="name">Имя</param>
+        /// <param name="patronymic">Отчество</param>
+        /// <param name="organization">Организация</param>
+        /// <param name="position">Должность</param>
+        /// <param name="email">Электронная почта</param>
+        /// <param name="numberPhone">Номер телефона</param>
+        /// <returns>коллекция  IEnumerable<Person>, которые удовлетворяют входным параметрам</returns>
         public IEnumerable<Person> SearchPerson(string surName, string name, string patronymic, string organization,
             string position, string email,
             string numberPhone)
@@ -291,31 +253,7 @@ namespace Model
         }
 
         /// <summary>
-        /// Очищение базы данных
-        /// </summary>
-        public void ClearDataBase()
-        {
-            using (var connection = new MySqlConnection(ConnectionString))
-            {
-                try
-                {
-                    const string sql = "DELETE FROM people";
-
-                    connection.Open();
-
-                    var cmd = new MySqlCommand(sql, connection);
-
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        /// <summary>
-        ///     Сохраняет внесенные в контекст изменения в базе данных.
+        /// Сохраняет внесенные в контекст изменения в базе данных.
         /// </summary>
         /// <param name="context">Контекст, в котором произошли изменения.</param>
         private static void SaveChanges(DbContext context)

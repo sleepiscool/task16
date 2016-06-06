@@ -2,6 +2,10 @@
 using System.Windows.Forms;
 using Model;
 
+
+/// <summary>
+///  Форма для добавления пользоватлея
+/// </summary>
 namespace Aapplication_model
 {
     public partial class AddPerson : Form
@@ -10,11 +14,17 @@ namespace Aapplication_model
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Событие чтобы запускать форму в другом окне
+        /// </summary>
         public void Run()
         {
             ShowDialog();
         }
+
+        /// <summary>
+        ///  Кнопка добавления пользователя 
+        /// </summary>
 
         private void Add_Click(object sender, EventArgs e)
         {

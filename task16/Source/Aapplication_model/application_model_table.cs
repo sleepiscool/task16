@@ -2,6 +2,11 @@
 using System.Windows.Forms;
 using Model;
 
+
+/// <summary>
+/// Главная форма программы 
+/// </summary>
+
 namespace Aapplication_model
 {
     public partial class ApplicationModelTable : Form
@@ -14,7 +19,10 @@ namespace Aapplication_model
             button_delete.Enabled = false;
             button_change.Enabled = false;
         }
-
+        
+        /// <summary>
+        ///  Обновить таблицу
+        /// </summary>
         public void Update()
         {
             dataGridView1.Rows.Clear();
@@ -38,30 +46,42 @@ namespace Aapplication_model
                 dataGridView1.Rows[j++].Cells["NumberPhone"].Value = person.NumberPhone ?? "";
             }
         }
-
+        /// <summary>
+        /// Функция чтобы можно было запускать сразу несколько форм
+        /// </summary>
         public void RunTable()
         {
             ShowDialog();
         }
-
+        /// <summary>
+        /// Событие при выделения строки в таблице
+        /// </summary>
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             button_delete.Enabled = true;
             button_change.Enabled = true;
         }
 
+        /// <summary>
+        ///  Кнопка поиска позьзователя 
+        /// </summary>
         private void button_search_Click(object sender, EventArgs e)
         {
             new SearchPerson().Run();
             Update();
         }
 
+        /// <summary>
+        ///  Кнопка добавление  позьзователя 
+        /// </summary>
         private void button_add_Click(object sender, EventArgs e)
         {
             new AddPerson().Run();
             Update();
         }
-
+        /// <summary>
+        ///  Кнопка изменения  позьзователя 
+        /// </summary>
         private void button_change_Click(object sender, EventArgs e)
         {
             var row = dataGridView1.CurrentCell.RowIndex;
@@ -78,7 +98,9 @@ namespace Aapplication_model
             new ChangePerson(person).Run();
             Update();
         }
-
+        /// <summary>
+        ///  Кнопка удаления  позьзователя 
+        /// </summary>
         private void button_delete_Click(object sender, EventArgs e)
         {
             var row = dataGridView1.CurrentCell.RowIndex;
@@ -96,7 +118,9 @@ namespace Aapplication_model
             repository.DeletePerson(person);
             Update();
         }
-
+        /// <summary>
+        /// Событие при отмене выделения строки
+        /// </summary>
         private void dataGridView1_RowLeave(object sender, EventArgs e)
         {
             button_delete.Enabled = false;

@@ -103,10 +103,11 @@ namespace Aapplication_model
             this.NumberPhone});
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(775, 231);
+            this.dataGridView1.Size = new System.Drawing.Size(775, 301);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
-            this.dataGridView1.SelectionChanged += new EventHandler(this.dataGridView1_RowLeave);            // 
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_RowLeave);
+            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
@@ -150,7 +151,7 @@ namespace Aapplication_model
             // 
             // button_search
             // 
-            this.button_search.Location = new System.Drawing.Point(12, 273);
+            this.button_search.Location = new System.Drawing.Point(12, 334);
             this.button_search.Name = "button_search";
             this.button_search.Size = new System.Drawing.Size(75, 23);
             this.button_search.TabIndex = 25;
@@ -160,7 +161,7 @@ namespace Aapplication_model
             // 
             // button_add
             // 
-            this.button_add.Location = new System.Drawing.Point(111, 273);
+            this.button_add.Location = new System.Drawing.Point(107, 334);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(75, 23);
             this.button_add.TabIndex = 26;
@@ -170,7 +171,7 @@ namespace Aapplication_model
             // 
             // button_change
             // 
-            this.button_change.Location = new System.Drawing.Point(228, 273);
+            this.button_change.Location = new System.Drawing.Point(203, 334);
             this.button_change.Name = "button_change";
             this.button_change.Size = new System.Drawing.Size(75, 23);
             this.button_change.TabIndex = 27;
@@ -180,7 +181,7 @@ namespace Aapplication_model
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(329, 273);
+            this.button_delete.Location = new System.Drawing.Point(300, 334);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(75, 23);
             this.button_delete.TabIndex = 28;
@@ -200,7 +201,7 @@ namespace Aapplication_model
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Text = "application_model_table";
+            this.Text = "                  Записная книжка";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

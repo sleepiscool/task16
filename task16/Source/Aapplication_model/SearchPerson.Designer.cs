@@ -62,7 +62,7 @@ namespace Aapplication_model
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 9);
+            this.label2.Location = new System.Drawing.Point(24, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 20;
@@ -78,7 +78,7 @@ namespace Aapplication_model
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 35);
+            this.label3.Location = new System.Drawing.Point(24, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 29;
@@ -87,7 +87,7 @@ namespace Aapplication_model
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 61);
+            this.label4.Location = new System.Drawing.Point(24, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 30;
@@ -96,7 +96,7 @@ namespace Aapplication_model
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 87);
+            this.label5.Location = new System.Drawing.Point(24, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 31;
@@ -105,7 +105,7 @@ namespace Aapplication_model
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 113);
+            this.label6.Location = new System.Drawing.Point(24, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 32;
@@ -114,7 +114,7 @@ namespace Aapplication_model
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 139);
+            this.label7.Location = new System.Drawing.Point(24, 146);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 33;
@@ -123,7 +123,7 @@ namespace Aapplication_model
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 165);
+            this.label8.Location = new System.Drawing.Point(24, 172);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 34;
@@ -173,7 +173,7 @@ namespace Aapplication_model
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(279, 165);
+            this.Search.Location = new System.Drawing.Point(27, 202);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(75, 23);
             this.Search.TabIndex = 41;
@@ -183,7 +183,7 @@ namespace Aapplication_model
             // 
             // button_change
             // 
-            this.button_change.Location = new System.Drawing.Point(15, 387);
+            this.button_change.Location = new System.Drawing.Point(27, 405);
             this.button_change.Name = "button_change";
             this.button_change.Size = new System.Drawing.Size(75, 23);
             this.button_change.TabIndex = 42;
@@ -193,7 +193,7 @@ namespace Aapplication_model
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(100, 387);
+            this.button_delete.Location = new System.Drawing.Point(125, 405);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(75, 23);
             this.button_delete.TabIndex = 43;
@@ -213,12 +213,12 @@ namespace Aapplication_model
             this.Position,
             this.Email,
             this.NumberPhone});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 202);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 242);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(767, 150);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
-            this.dataGridView1.SelectionChanged += new EventHandler(this.dataGridView1_RowLeave); 
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_RowLeave);
             // 
             // Id
             // 
@@ -265,7 +265,7 @@ namespace Aapplication_model
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 432);
+            this.ClientSize = new System.Drawing.Size(806, 437);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_change);
@@ -284,7 +284,7 @@ namespace Aapplication_model
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_SurName);
             this.Controls.Add(this.label2);
-            this.Text = "SearchPerson";
+            this.Text = "               Поиск пользователя";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
