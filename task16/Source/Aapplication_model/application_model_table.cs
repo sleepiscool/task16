@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 using Model;
 
@@ -15,6 +16,7 @@ namespace Aapplication_model
         public ApplicationModelTable()
         {
             InitializeComponent();
+            
             Update();
             button_delete.Enabled = false;
             button_change.Enabled = false;
@@ -46,6 +48,7 @@ namespace Aapplication_model
                 dataGridView1.Rows[j++].Cells["NumberPhone"].Value = person.NumberPhone ?? "";
             }
         }
+   
         /// <summary>
         /// Функция чтобы можно было запускать сразу несколько форм
         /// </summary>

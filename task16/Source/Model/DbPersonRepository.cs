@@ -23,7 +23,7 @@ namespace Model
             }
             catch (Exception)
             {
-                ConnectionString = ConfigurationManager.ConnectionStrings["LocalPersonDatabase"].ConnectionString;
+                ConnectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
             }
         }
 
@@ -74,10 +74,18 @@ namespace Model
         {
             using (var connection = new MySqlConnection(ConnectionString))
             {
-                using (var contextDb = new PersonDbContext(connection, false))
+                try
                 {
-                    contextDb.Database.CreateIfNotExists();
+                    using (var contextDb = new PersonDbContext(connection, false))
+                    {
+                        contextDb.Database.CreateIfNotExists();
+                    }
                 }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Ошибка в подключении базы данных!\nВозможно вы забыли запустить процесс MySql");
+                }
+             
 
                 connection.Open();
 

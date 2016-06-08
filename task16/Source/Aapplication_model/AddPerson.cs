@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Model;
 
@@ -29,7 +30,25 @@ namespace Aapplication_model
         private void Add_Click(object sender, EventArgs e)
         {
             var repository = new DbPersonRepository();
-            repository.AddPerson(new Person(Name.Text, Surname.Text, Patronymic.Text, Position.Text, Organization.Text, Email.Text, NumberPhone.Text ));
+            var people = repository.GetPeopleList();
+
+
+            if ((Name.Text[0] != Name.Text.ToUpper()[0]) || (Surname.Text[0] != Surname.Text.ToUpper()[0]) & (Patronymic.Text[0] != Patronymic.Text.ToUpper()[0]))
+            {
+                MessageBox.Show("Name, SurName, Patronymic должны начинаться с заглавной буквы!\nПопробуйте еще раз!");
+                return;
+            }
+
+
+            if (people.Any(person => person.Name.Equals(Name.Text) 
+                & person.SurName.Equals(Surname.Text) 
+                & person.Patronymic.Equals(Patronymic.Text)))
+            {
+                MessageBox.Show("Данный пользователь уже есть в базе данных!");
+                Close();
+                return;
+            }
+            repository.AddPerson(new Person(Surname.Text, Name.Text, Patronymic.Text, Position.Text, Organization.Text, Email.Text, NumberPhone.Text));
             this.Close();
         }
     }
