@@ -39,7 +39,7 @@ namespace Aapplication_model
             foreach (var person in peopleList)
             {
                 dataGridView1.Rows[j].Cells["Id"].Value = person.Id;
-                dataGridView1.Rows[j].Cells["SurName"].Value = person.SurName ?? "";
+                dataGridView1.Rows[j].Cells["SurName"].Value = person.SurName ?? "" ;
                 dataGridView1.Rows[j].Cells["Name"].Value = person.Name ?? "";
                 dataGridView1.Rows[j].Cells["Patronymic"].Value = person.Patronymic ?? "";
                 dataGridView1.Rows[j].Cells["Organization"].Value = person.Organization ?? "";
@@ -48,7 +48,15 @@ namespace Aapplication_model
                 dataGridView1.Rows[j++].Cells["NumberPhone"].Value = person.NumberPhone ?? "";
             }
         }
-   
+        public static string Convertall(string value, Encoding src, Encoding trg)
+        {
+            Decoder dec = src.GetDecoder();
+            byte[] ba = trg.GetBytes(value);
+            int len = dec.GetCharCount(ba, 0, ba.Length);
+            char[] ca = new char[len];
+            dec.GetChars(ba, 0, ba.Length, ca, 0);
+            return new string(ca);
+        }
         /// <summary>
         /// Функция чтобы можно было запускать сразу несколько форм
         /// </summary>

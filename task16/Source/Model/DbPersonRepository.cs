@@ -20,6 +20,7 @@ namespace Model
             try
             {
                 ConnectionString = ConfigurationManager.ConnectionStrings["LocalPersonDatabase"].ConnectionString;
+                
             }
             catch (Exception)
             {

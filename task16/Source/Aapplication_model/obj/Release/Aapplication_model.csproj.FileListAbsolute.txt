@@ -34,3 +34,6 @@ E:\мп\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.S
 E:\мп\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.csproj.GenerateResource.Cache
 E:\мп\task16\task16\Build\Release\Aapplication_model.exe
 E:\мп\task16\task16\Build\Release\Aapplication_model.pdb
+F:\task16\task16\Build\Release\Aapplication_model.exe.config
+F:\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.exe
+F:\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.pdb
