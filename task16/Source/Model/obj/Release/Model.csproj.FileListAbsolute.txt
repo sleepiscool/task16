@@ -20,3 +20,14 @@ E:\мп\task16\task16\Source\Model\bin\Release\EntityFramework.SqlServer.xml
 E:\мп\task16\task16\Source\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
 E:\мп\task16\task16\Source\Model\obj\Release\Model.dll
 E:\мп\task16\task16\Source\Model\obj\Release\Model.pdb
+D:\мп\task16\task16\task16\Source\Model\bin\Release\Model.dll.config
+D:\мп\task16\task16\task16\Source\Model\bin\Release\Model.dll
+D:\мп\task16\task16\task16\Source\Model\bin\Release\Model.pdb
+D:\мп\task16\task16\task16\Source\Model\bin\Release\EntityFramework.dll
+D:\мп\task16\task16\task16\Source\Model\bin\Release\EntityFramework.SqlServer.dll
+D:\мп\task16\task16\task16\Source\Model\bin\Release\MySql.Data.dll
+D:\мп\task16\task16\task16\Source\Model\bin\Release\MySql.Data.Entity.EF6.dll
+D:\мп\task16\task16\task16\Source\Model\bin\Release\EntityFramework.SqlServer.xml
+D:\мп\task16\task16\task16\Source\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\мп\task16\task16\task16\Source\Model\obj\Release\Model.dll
+D:\мп\task16\task16\task16\Source\Model\obj\Release\Model.pdb

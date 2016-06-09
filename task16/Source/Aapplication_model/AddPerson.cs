@@ -35,13 +35,13 @@ namespace Aapplication_model
                 MessageBox.Show("Обязательные поля ввода: Name, Surname, Patronymic");
                 return;
             }
-            var myRegFIO = new Regex(@"[A-Z]{1}[a-z]+");
+            var myRegFIO = new Regex(@"[A-Z]{1}[a-z]*");
             if (!myRegFIO.IsMatch(Name.Text) || !myRegFIO.IsMatch(Surname.Text) || !myRegFIO.IsMatch(Patronymic.Text))
             {
-                MessageBox.Show("Name, SurName, Patronymic должны начинаться с заглавной буквы!\nПопробуйте еще раз!");
+                MessageBox.Show("Name, SurName, Patronymic должны начинаться с заглавной буквы! Символов быть не должно!\nПопробуйте еще раз!");
                 return;
             }
-            var myRegEmail = new Regex(@"[A-Za-z]+[\.A-Za-z0-9_-]*[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]+");
+            var myRegEmail = new Regex(@"[A-Za-z0-9_-]+@[A-Za-z]+\.[A-Za-z]+");
             if (!myRegEmail.IsMatch(Email.Text) & (Email.Text.Length != 0))
             {
                 MessageBox.Show("Указанная вами электронная почта введена неверно.\nПример ввода: denisqwe@mail.ru");
@@ -51,15 +51,15 @@ namespace Aapplication_model
             var myRegNumberPhone = new Regex(@"8[0-9]{10}$");
             if (!myRegNumberPhone.IsMatch(NumberPhone.Text) & (NumberPhone.Text.Length != 0))
             {
-                MessageBox.Show("Указанный вами телефон был введен неверно.\nФормат телефона: 89652222222");
+                MessageBox.Show("Указанный вами телефон был введен неверно.\nФормат телефона: 8XXXXXXXXXX(11 цифр)");
                 return;
             }
             var repository = new DbPersonRepository();
             var people = repository.GetPeopleList();
 
-            if (people.Any(person => person.Name.Equals(Name.Text) 
-                & person.SurName.Equals(Surname.Text) 
-                & person.Patronymic.Equals(Patronymic.Text)))
+            if (people.Any(person => person.Name.ToLower().Equals(Name.Text.ToLower())
+                & person.SurName.ToLower().Equals(Surname.Text.ToLower())
+                & person.Patronymic.ToLower().Equals(Patronymic.Text.ToLower())))
             {
                 MessageBox.Show("Данный пользователь уже есть в базе данных!");
                 Close();

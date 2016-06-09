@@ -89,8 +89,8 @@ namespace Model
         /// <returns></returns>
         protected bool Equals(Person other)
         {
-            return Id == other.Id && string.Equals(SurName, other.SurName) && string.Equals(Name, other.Name)
-                   && string.Equals(Patronymic, other.Patronymic) && string.Equals(Organization, other.Organization)
+            return Id == other.Id && string.Equals(SurName.ToLower(), other.SurName.ToLower()) && string.Equals(Name.ToLower(), other.Name.ToLower())
+                   && string.Equals(Patronymic.ToLower(), other.Patronymic.ToLower()) && string.Equals(Organization, other.Organization)
                    && string.Equals(Position, other.Position) && string.Equals(Email, other.Email)
                    && string.Equals(NumberPhone, other.NumberPhone);
         }

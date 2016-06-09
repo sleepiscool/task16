@@ -37,3 +37,15 @@ E:\мп\task16\task16\Build\Release\Aapplication_model.pdb
 F:\task16\task16\Build\Release\Aapplication_model.exe.config
 F:\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.exe
 F:\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.pdb
+D:\мп\task16\task16\task16\Build\Release\Aapplication_model.exe.config
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.exe
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.pdb
+D:\мп\task16\task16\task16\Build\Release\Aapplication_model.exe
+D:\мп\task16\task16\task16\Build\Release\Aapplication_model.pdb
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.csprojResolveAssemblyReference.cache
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.AddPerson.resources
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.ApplicationModelTable.resources
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.ChangePerson.resources
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.Properties.Resources.resources
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.SearchPerson.resources
+D:\мп\task16\task16\task16\Source\Aapplication_model\obj\Release\Aapplication_model.csproj.GenerateResource.Cache

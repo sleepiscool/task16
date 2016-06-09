@@ -25,7 +25,7 @@ namespace Aapplication_model
         /// <summary>
         ///  Обновить таблицу
         /// </summary>
-        public void Update()
+        public new void Update()
         {
             dataGridView1.Rows.Clear();
             var repository = new DbPersonRepository();
